@@ -1,7 +1,7 @@
-package services
+package domain
 
 import "fmt"
 
-func sayHelloWorld() string {
+func SayHelloWorld() string {
 	return fmt.Sprintf("Hello World")
 }

@@ -1,4 +1,4 @@
-package services
+package domain
 
 import (
 	"testing"
@@ -6,7 +6,7 @@ import (
 
 func SayHello_PrintsName(t *testing.T) {
 	want := "Hello"
-	msg := sayHelloWorld()
+	msg := SayHelloWorld()
 	if want != msg {
 		t.Fatalf("Expected %s but got %s", want, msg)
 	}
