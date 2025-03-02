@@ -2,12 +2,9 @@ package gotodosrv
 
 import (
 	"context"
-	"testing"
-
-	"github.com/stretchr/testify/require"
-
 	"github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/wait"
+	"testing"
 )
 
 func TestHelloWorldContainerShouldLogCorrectly(t *testing.T) {
@@ -20,5 +17,8 @@ func TestHelloWorldContainerShouldLogCorrectly(t *testing.T) {
 		Started: true,
 	})
 	testcontainers.CleanupContainer(t, redisC)
-	require.NoError(t, err)
+
+	if err != nil {
+		t.Errorf("Hello World Container Failed to Start")
+	}
 }
