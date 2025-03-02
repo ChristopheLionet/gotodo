@@ -1,12 +1,12 @@
 package main
 
 import (
-	"gotodo/internal/handlers"
+	"gotodo/internal/api/routes"
 	"log"
 	"net/http"
 )
 
 func main() {
-	http.HandleFunc("/diagnostics/healthcheck", handlers.HandleHealthCheck)
+	routes.AddRoutes()
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
